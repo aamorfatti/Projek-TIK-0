@@ -253,57 +253,6 @@ void check_out(string data[2][6][3], short kamarr[2][6], unsigned short input, u
 
 }
 
-// menampilkan home screen.
-void menu_utama(unsigned short indikator, string data[2][6][3], short kamarr[2][6], unsigned short input, unsigned short lantaii, unsigned short ruangann) {
-    unsigned short tf = 1;
-    while (tf != 0){
-        char mc;
-        header();
-        cout << "\nMENU:\n1. List kamar\n2. Check-in\n3. Check-out" << endl;
-        cout << "masukan angka 1 sampai 3 untuk memilih opsi diatas. \nmasukan angka 9 untuk menutup program." << endl;
-        cout << "\ninput: "; cin >> indikator;
-        
-        switch (indikator) {
-        case 1:
-            system("cls");
-            cout << "=========================================\n=\t\t\t\t\t=\n=\t\t\List kamar\t\t=\n=\t\t\t\t\t=\n=========================================" << endl;
-            sistem_kamar(kamarr);
-            cout << "untuk kembali, ";
-            system("pause");
-            continue;
-            
-        case 2:
-            check_in(data, kamarr, input, lantaii, ruangann);
-            continue;
-
-        case 3:
-            if (semuaKamarKosong(kamarr)) {
-                cout << "gawian lagi sepi wal, semua kamar kosong." << endl;
-                system("pause");
-                continue;
-            }
-            else {
-                check_out(data, kamarr, input, lantaii, ruangann);
-                continue;
-            }
-
-        case 9:
-            break;
-
-        default:
-            // Input tidak valid
-            cin.clear(); // Menghapus keadaan kesalahan
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Membersihkan buffer
-            cout << "\n|!!|\t masukan angka yang valid\t|!!|\n" << endl;
-            system("pause");
-            continue;
-        }
-
-        cout << "akhir dari program" << endl;
-        tf = 0;    
-    }
-}
-
 int main(){ 
     unsigned short lantai = 0, ruangan = 0, input_kamar = 0, indikator_menu = 0;
     short kamar[2][6] = { {0,0,0,0,0,0}, {0,0,0,0,0,0} };
@@ -326,11 +275,59 @@ int main(){
             {{0, 0, 0}}
         }
     };
-
-   //sistem_kamar(kamar);
-   menu_utama(indikator_menu, biodata, kamar, input_kamar, lantai, ruangan);
+   // mengetes fungsi void yang ada 
+   // sistem_kamar(kamar);
+   // menu_utama(indikator_menu, biodata, kamar, input_kamar, lantai, ruangan);
    // check_in(biodata, kamar, input_kamar, lantai, ruangan);
    // check_out(biodata, kamar, input_kamar, lantai, ruangan);
+
+   unsigned short tf = 1;
+   while (tf != 0) {
+       char mc;
+       header();
+       cout << "\nMENU:\n1. List kamar\n2. Check-in\n3. Check-out" << endl;
+       cout << "masukan angka 1 sampai 3 untuk memilih opsi diatas. \nmasukan angka 9 untuk menutup program." << endl;
+       cout << "\ninput: "; cin >> indikator_menu;
+
+       switch (indikator_menu) {
+       case 1:
+           system("cls");
+           cout << "=========================================\n=\t\t\t\t\t=\n=\t\t\List kamar\t\t=\n=\t\t\t\t\t=\n=========================================" << endl;
+           sistem_kamar(kamar);
+           cout << "untuk kembali, ";
+           system("pause");
+           continue;
+
+       case 2:
+           check_in(biodata, kamar, input_kamar, lantai, ruangan);
+           continue;
+
+       case 3:
+           if (semuaKamarKosong(kamar)) {
+               cout << "gawian lagi sepi wal, semua kamar kosong." << endl;
+               system("pause");
+               continue;
+           }
+           else {
+               check_out(biodata, kamar, input_kamar, lantai, ruangan);
+               continue;
+           }
+
+       case 9:
+           break;
+
+       default:
+           // Input tidak valid
+           cin.clear(); // Menghapus keadaan yang salah
+           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Membersihkan buffer
+           cout << "\n|!!|\t masukan angka yang valid\t|!!|\n" << endl;
+           system("pause");
+           continue;
+       }
+
+       cout << "akhir dari program" << endl;
+       tf = 0;
+   }
 
    return 0;
 }
