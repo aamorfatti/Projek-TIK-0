@@ -277,7 +277,6 @@ int main(){
     };
    // mengetes fungsi void yang ada 
    // sistem_kamar(kamar);
-   // menu_utama(indikator_menu, biodata, kamar, input_kamar, lantai, ruangan);
    // check_in(biodata, kamar, input_kamar, lantai, ruangan);
    // check_out(biodata, kamar, input_kamar, lantai, ruangan);
 
