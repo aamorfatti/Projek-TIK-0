@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\raymo\Documents\project\Projek TIK\Source.cpp(269,21): warning C4129: 'L': unrecognized character escape sequence
+C:\Users\raymo\Documents\project\Projek TIK\Source.cpp(260,14): warning C4101: 'mc': unreferenced local variable
+C:\Users\raymo\Documents\project\Projek TIK\Source.cpp(346,20): warning C4129: 'L': unrecognized character escape sequence
+C:\Users\raymo\Documents\project\Projek TIK\Source.cpp(337,13): warning C4101: 'mc': unreferenced local variable
+  Projek TIK.vcxproj -> C:\Users\raymo\Documents\project\Projek TIK\x64\Debug\Projek TIK.exe
